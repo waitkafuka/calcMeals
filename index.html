@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="browsermode" content="application" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
+    <title>餐费计算器</title>
+    <link rel="shortcut icon" href="http://kiddingyou.cc/static/img/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 12px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #2cc36b;
+            color: #fff;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 5px 10px;
+            border: 1px solid #e3e3e3;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        input {
+            outline: none;
+            text-align: center;
+            width: 60px;
+            padding-left: 5px;
+            padding: 3px 5px;
+            border-radius: 3px;
+            border: 1px solid #e3e3e3;
+        }
+
+        .dont-modify {
+            border: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #fff;
+            background: #2cc36b;
+            cursor: pointer;
+        }
+
+        h5 {
+            text-align: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h5>tips:输入每个人的订餐原价和优惠金额，点击开始计算，自动计算折后价</h6>
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <th>原价</th>
+                    <th>餐费、配送费</th>
+                    <th>折前价</th>
+                    <th>折后价</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='蔺桂芬'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='张磊'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='朱丽'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='成媛'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='王庆磊'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='张青山'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='武宝江'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='左康生'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value='回天力'>
+                    </td>
+                    <td>
+                        <input type="number" class="price-before person">
+                    </td>
+                    <td>
+                        <span class="add-ones-per">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-before-discount">0.0</span>
+                    </td>
+                    <td>
+                        <span class="price-after">0.0</span>
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="del-btn">移除</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="color: red">
+                        * 优惠金额：
+                    </td>
+                    <td>
+                        <input type="number" placeholder="满减+红包" style="width:70px;padding-right: 3px" class="reduction">
+                    </td>
+                    <td>
+                        餐盒费：
+                    </td>
+                    <td>
+                        <input type="number" class="price-before add-ones lunch-fee" value="9">
+                    </td>
+                    <td>
+                        配送费：
+                    </td>
+                    <td>
+                        <input type="number" class="price-before add-ones" value="6">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8">
+                        <span class="btn calc-btn" style="margin-left: 10px;">开始计算</span>
+                        <span class="btn add-person-btn" style="margin-left: 10px">再加个人</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        合计：
+                    </td>
+                    <td>
+                        <span class="total">0.0</span>
+                    </td>
+                    <td>
+                        <span class="total-addones">0.0</span>
+                    </td>
+                    <td>
+                        <span class="total-before">0.0</span>
+                    </td>
+                    <td>
+                        <span class="total-after">0.0</span>
+                    </td>
+                    <td>🙂</td>
+                </tr>
+            </table>
+    </div>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var apReduce = Array.prototype.reduce;
+        function sum($elements) {
+            return apReduce.call($elements, function (a, b) {
+                return $(b).val() ? a + parseFloat($(b).val()) : a;
+            }, 0);
+        }
+
+        var template = $('.person:last').parents('tr').clone();
+        template.find('input:first').val('姓名');
+
+        $(document).ready(function () {
+            $('.calc-btn').click(function () {
+                var totalPriceBefore = sum($('.price-before')),
+                    reductionPrice = $('.reduction').val() ? parseFloat($('.reduction').val()) : 0.0,
+                    totalPriceAfter = totalPriceBefore - reductionPrice,
+                    addOnes = sum($('.add-ones')),
+                    personNum = $('.person').length,
+                    addOnesPer = parseFloat((addOnes / personNum).toFixed(1));
+                if (totalPriceBefore === addOnes) {
+                    alert('没有人点餐，全是配送费');
+                    return false;
+                }
+                $('.person').each(function (index, e) {
+                    $(this).val() || $(this).val('0');
+                    var priceBefore = parseFloat($(this).val());
+
+                    /*
+                      两种算法，结果是一样的：
+                      1.每人折后价 = (原价/(原总价-餐费-配送费))*(折后总价-餐费-配送费)+(餐费+配送费)/总人数
+                      2.每人折后价 = 原价 - (原价/(原总价-餐费-配送费))*优惠金额 + (餐费+配送费)/总人数;
+                    */
+                    var priceAfter = priceBefore / (totalPriceBefore - addOnes) * (totalPriceAfter - addOnes) + addOnesPer;
+                    // var priceAfter = priceBefore - priceBefore/(totalPriceBefore - addOnes)*reductionPrice + addOnesPer;
+                    var ptr = $(this).parents('tr');
+                    ptr.find('.price-after').text(priceAfter ? priceAfter.toFixed(1) : 0.0);
+                    ptr.find('.price-before-discount').text(priceBefore + addOnesPer);
+                    $('.add-ones-per').text(addOnesPer);
+
+                });
+                $('.total').text(totalPriceBefore - addOnes);
+                $('.total-addones').text(addOnes);
+                $('.total-before').text(totalPriceBefore);
+                $('.total-after').text(totalPriceAfter);
+            });
+
+            function changeLunchFee() {
+                $('.lunch-fee').val($('.person').length * 1);
+            }
+
+            $('table').on('click', '.del-btn', function () {
+                if ($('.person').length === 1) {
+                    alert("别都删完了，至少留一个呀");
+                    return false;
+                }
+                $(this).parents('tr').remove();
+                changeLunchFee();
+            });
+
+            $('.add-person-btn').click(function () {
+                $('.person:last').parents('tr').after(template);
+                template = template.clone();
+                changeLunchFee();
+            });
+
+        })
+    </script>
+</body>
+
+</html>
